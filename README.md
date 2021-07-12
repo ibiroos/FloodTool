@@ -14,7 +14,7 @@ This plug-in has been developed under
 [MyCOAST](http://www.mycoast-project.org) project.
 
 ![Figure 1: A screenshot of FloodTool in
-QGIS](./FloodTool/principal.png){#fig:portada width="60%"}
+QGIS](./doc/png/principal.png){#fig:portada width="60%"}
 
 ## Requierements
 
@@ -41,9 +41,9 @@ option to download it from OSGeo4W. When executing the "setup" of the
 OSGeo4W we must follow these steps:
 
 ::: {#fig:OSGeo4W .subfigures}
-![a](./FloodTool/instalacion/OSGeo1.png "fig:"){#fig:osgeo1}
-![b](./FloodTool/instalacion/OSGeo2.png "fig:"){#fig:osgeo2}
-![c](./FloodTool/instalacion/OSGeo3.png "fig:"){#fig:osgeo3}
+![a](./doc/png/instalacion/OSGeo1.png "fig:"){#fig:osgeo1}
+![b](./doc/png/instalacion/OSGeo2.png "fig:"){#fig:osgeo2}
+![c](./doc/png/instalacion/OSGeo3.png "fig:"){#fig:osgeo3}
 
 Figure 2: QGis setup from OSGeo4W.
 :::
@@ -109,7 +109,7 @@ normal QGIS project.
     -   Wave where wave model is selected.
 
 ![Figure 3: FloodTool main
-window.](./FloodTool/interfaz_plugin.png){#fig:interfaz_plugin}
+window.](./doc/png/interfaz_plugin.png){#fig:interfaz_plugin}
 
 -   The first step is filling in the Hydrodynamic tab selecting the
     hydrodynamic model (Model grid combo box). After model selection,
@@ -124,7 +124,7 @@ window.](./FloodTool/interfaz_plugin.png){#fig:interfaz_plugin}
     sure you check it if you want to use it.
 
 ![Figure 4: Hydrodynamic model
-selection.](./FloodTool/hydro_tab.png){#fig:hydro_tab}
+selection.](./doc/png/hydro_tab.png){#fig:hydro_tab}
 
 -   Fill in the Wave tab in the same way you filled Hydrodynamic tab.
     Data sources for Hydrodynamic and Wave model can have different time
@@ -138,7 +138,7 @@ selection.](./FloodTool/hydro_tab.png){#fig:hydro_tab}
     work you will need an input layer with flood level return periods.
 
 ![Figure 5: Wave model selection
-tab.](./FloodTool/wave_tab.png){#fig:wave_tab}
+tab.](./doc/png/wave_tab.png){#fig:wave_tab}
 
 -   Once configured, Run button will be enabled. Click on it to start
     with data download, perform calculation of flood level and
@@ -146,7 +146,7 @@ tab.](./FloodTool/wave_tab.png){#fig:wave_tab}
     ([6](#fig:resultado)).
 
 ![Figure 6: Running the configuration and output
-layer.](./FloodTool/resultado.png){#fig:resultado}
+layer.](./doc/png/resultado.png){#fig:resultado}
 
 -   After running, and Output vector layer will be created with several
     attributes that can be used to define a QGIS symbols. If you choose
@@ -157,4 +157,4 @@ layer.](./FloodTool/resultado.png){#fig:resultado}
     ([7](#fig:timemanager)).
 
 ![Figure 7: TimeManager plug-in output
-animation.](./FloodTool/timemanager.png){#fig:timemanager}
+animation.](./doc/png/timemanager.png){#fig:timemanager}
