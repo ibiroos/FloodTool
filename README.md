@@ -13,8 +13,9 @@ actual computation of flood level.
 This plug-in has been developed under
 [MyCOAST](http://www.mycoast-project.org) project.
 
-![Figure 1: A screenshot of FloodTool in
-QGIS](./doc/png/principal.png){#fig:portada width="60%"}
+<figure>
+<img src="./doc/png/principal.png" id="fig:portada" style="width:60.0%" alt="Figure 1: A screenshot of FloodTool in QGIS" /><figcaption aria-hidden="true">Figure 1: A screenshot of FloodTool in QGIS</figcaption>
+</figure>
 
 ## Requierements
 
@@ -37,16 +38,18 @@ and libraries.
 
 To install the program under Windows, visit
 https://www.qgis.org/es/site/forusers/download.html and choose the
-option to download it from OSGeo4W. When executing the "setup" of the
+option to download it from OSGeo4W. When executing the “setup” of the
 OSGeo4W we must follow these steps:
 
-::: {#fig:OSGeo4W .subfigures}
-![a](./doc/png/instalacion/OSGeo1.png "fig:"){#fig:osgeo1}
-![b](./doc/png/instalacion/OSGeo2.png "fig:"){#fig:osgeo2}
-![c](./doc/png/instalacion/OSGeo3.png "fig:"){#fig:osgeo3}
+<div id="fig:OSGeo4W" class="subfigures">
+
+<img src="./doc/png/instalacion/OSGeo1.png" title="fig:" id="fig:osgeo1" alt="a" />
+<img src="./doc/png/instalacion/OSGeo2.png" title="fig:" id="fig:osgeo2" alt="b" />
+<img src="./doc/png/instalacion/OSGeo3.png" title="fig:" id="fig:osgeo3" alt="c" />
 
 Figure 2: QGis setup from OSGeo4W.
-:::
+
+</div>
 
 It is important that you mark, download and install all software
 packages that shown in [2 (c)](#fig:osgeo3). Once the packages to be
@@ -60,15 +63,15 @@ the following steps:
 
 -   Open OSGeo4W Shell
 
--   Path update, using "py3_env."
+-   Path update, using “py3_env.”
 
--   Install "pip" command:
+-   Install “pip” command:
 
-    -   Download "get_pip.py" from <https://bootstrap.pypa.io>
+    -   Download “get_pip.py” from <https://bootstrap.pypa.io>
     -   Put he file in OSGeo4W folder and execute from Shell (python
         get_pip.py). This program will download and install pip,
         setuptools and wheel.
-    -   Update the paths, again, with "py3_env."
+    -   Update the paths, again, with “py3_env.”
 
 -   From <https://www.lfd.uci.edu/~gohlke/pythonlibs/> download the
     following libraries:
@@ -82,8 +85,8 @@ Once NetCDF and cftime are installed we can install the plug-in itself.
 Clone the code tree or download the zip file from this Github
 repository. Look for the QGis plug-in folder (in Windows systems usually
 C:\\OSGeo4W64\\apps\\qgis\\python\\plugins) and copy the plug-in code to
-this location. In QGis program, in tab "Complements/Manage and install
-plugins" looking for "FloodTool" and activate it. If you are able to see
+this location. In QGis program, in tab “Complements/Manage and install
+plugins” looking for “FloodTool” and activate it. If you are able to see
 a connector icon at the toolbar, congratulations, you have the plug-in
 installed.
 
@@ -108,8 +111,9 @@ normal QGIS project.
     -   Hydrodynamic where hydrodynamic model is selected
     -   Wave where wave model is selected.
 
-![Figure 3: FloodTool main
-window.](./doc/png/interfaz_plugin.png){#fig:interfaz_plugin}
+<figure>
+<img src="./doc/png/interfaz_plugin.png" id="fig:interfaz_plugin" alt="Figure 3: FloodTool main window." /><figcaption aria-hidden="true">Figure 3: FloodTool main window.</figcaption>
+</figure>
 
 -   The first step is filling in the Hydrodynamic tab selecting the
     hydrodynamic model (Model grid combo box). After model selection,
@@ -123,8 +127,9 @@ window.](./doc/png/interfaz_plugin.png){#fig:interfaz_plugin}
     model grid has a tidal solution, the check box will be enable. Make
     sure you check it if you want to use it.
 
-![Figure 4: Hydrodynamic model
-selection.](./doc/png/hydro_tab.png){#fig:hydro_tab}
+<figure>
+<img src="./doc/png/hydro_tab.png" id="fig:hydro_tab" alt="Figure 4: Hydrodynamic model selection." /><figcaption aria-hidden="true">Figure 4: Hydrodynamic model selection.</figcaption>
+</figure>
 
 -   Fill in the Wave tab in the same way you filled Hydrodynamic tab.
     Data sources for Hydrodynamic and Wave model can have different time
@@ -134,19 +139,21 @@ selection.](./doc/png/hydro_tab.png){#fig:hydro_tab}
     several options are available ([5](#fig:wave_tab)). Time control
     options indicate if you want to compute Max level or a Timeseries of
     expected flood level. Additionally, you can compute the real level
-    or use a "traffic light"-like color codes. For this last option to
+    or use a “traffic light”-like color codes. For this last option to
     work you will need an input layer with flood level return periods.
 
-![Figure 5: Wave model selection
-tab.](./doc/png/wave_tab.png){#fig:wave_tab}
+<figure>
+<img src="./doc/png/wave_tab.png" id="fig:wave_tab" alt="Figure 5: Wave model selection tab." /><figcaption aria-hidden="true">Figure 5: Wave model selection tab.</figcaption>
+</figure>
 
 -   Once configured, Run button will be enabled. Click on it to start
     with data download, perform calculation of flood level and
     categorization of output. Progress bar will evolve accordingly
     ([6](#fig:resultado)).
 
-![Figure 6: Running the configuration and output
-layer.](./doc/png/resultado.png){#fig:resultado}
+<figure>
+<img src="./doc/png/resultado.png" id="fig:resultado" alt="Figure 6: Running the configuration and output layer." /><figcaption aria-hidden="true">Figure 6: Running the configuration and output layer.</figcaption>
+</figure>
 
 -   After running, and Output vector layer will be created with several
     attributes that can be used to define a QGIS symbols. If you choose
@@ -156,5 +163,6 @@ layer.](./doc/png/resultado.png){#fig:resultado}
     Installation of this plug-in is very straightforward
     ([7](#fig:timemanager)).
 
-![Figure 7: TimeManager plug-in output
-animation.](./doc/png/timemanager.png){#fig:timemanager}
+<figure>
+<img src="./doc/png/timemanager.png" id="fig:timemanager" alt="Figure 7: TimeManager plug-in output animation." /><figcaption aria-hidden="true">Figure 7: TimeManager plug-in output animation.</figcaption>
+</figure>
