@@ -1,0 +1,333 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>FloodTool2DockWidgetBase</class>
+ <widget class="QDockWidget" name="FloodTool2DockWidgetBase">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>507</width>
+    <height>642</height>
+   </rect>
+  </property>
+  <property name="font">
+   <font>
+    <weight>50</weight>
+    <bold>false</bold>
+   </font>
+  </property>
+  <property name="windowTitle">
+   <string>FloodTool2</string>
+  </property>
+  <widget class="QWidget" name="dockWidgetContents">
+   <layout class="QGridLayout" name="gridLayout">
+    <item row="0" column="0">
+     <widget class="QLabel" name="label">
+      <property name="text">
+       <string/>
+      </property>
+      <property name="pixmap">
+       <pixmap resource="resources.qrc">:/plugins/flood_tool2/logo.png</pixmap>
+      </property>
+     </widget>
+    </item>
+    <item row="1" column="0">
+     <widget class="QTabWidget" name="tabWidget">
+      <property name="currentIndex">
+       <number>0</number>
+      </property>
+      <widget class="QWidget" name="Layers">
+       <attribute name="title">
+        <string>Layers</string>
+       </attribute>
+       <widget class="QPushButton" name="run_button">
+        <property name="geometry">
+         <rect>
+          <x>200</x>
+          <y>420</y>
+          <width>89</width>
+          <height>25</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>Run</string>
+        </property>
+       </widget>
+       <widget class="QTextBrowser" name="results_textBrowser">
+        <property name="geometry">
+         <rect>
+          <x>7</x>
+          <y>150</y>
+          <width>471</width>
+          <height>211</height>
+         </rect>
+        </property>
+       </widget>
+       <widget class="QProgressBar" name="progressBar">
+        <property name="geometry">
+         <rect>
+          <x>15</x>
+          <y>370</y>
+          <width>451</width>
+          <height>23</height>
+         </rect>
+        </property>
+        <property name="value">
+         <number>24</number>
+        </property>
+       </widget>
+       <widget class="QGroupBox" name="groupBox_time">
+        <property name="geometry">
+         <rect>
+          <x>20</x>
+          <y>10</y>
+          <width>201</width>
+          <height>121</height>
+         </rect>
+        </property>
+        <property name="title">
+         <string>Time control</string>
+        </property>
+        <property name="checkable">
+         <bool>false</bool>
+        </property>
+        <widget class="QRadioButton" name="radioButton_max">
+         <property name="geometry">
+          <rect>
+           <x>20</x>
+           <y>40</y>
+           <width>112</width>
+           <height>23</height>
+          </rect>
+         </property>
+         <property name="text">
+          <string>Max level</string>
+         </property>
+         <property name="checked">
+          <bool>true</bool>
+         </property>
+        </widget>
+        <widget class="QRadioButton" name="radioButton_timeserie">
+         <property name="geometry">
+          <rect>
+           <x>20</x>
+           <y>80</y>
+           <width>112</width>
+           <height>23</height>
+          </rect>
+         </property>
+         <property name="text">
+          <string>Timeseries</string>
+         </property>
+        </widget>
+       </widget>
+       <widget class="QGroupBox" name="groupBox_codes">
+        <property name="geometry">
+         <rect>
+          <x>250</x>
+          <y>10</y>
+          <width>211</width>
+          <height>121</height>
+         </rect>
+        </property>
+        <property name="title">
+         <string>Output categorization</string>
+        </property>
+        <widget class="QRadioButton" name="radioButton_light">
+         <property name="geometry">
+          <rect>
+           <x>20</x>
+           <y>80</y>
+           <width>171</width>
+           <height>23</height>
+          </rect>
+         </property>
+         <property name="text">
+          <string>Compute color codes</string>
+         </property>
+        </widget>
+        <widget class="QRadioButton" name="radioButton_level">
+         <property name="geometry">
+          <rect>
+           <x>20</x>
+           <y>40</y>
+           <width>161</width>
+           <height>23</height>
+          </rect>
+         </property>
+         <property name="text">
+          <string>Compute real level</string>
+         </property>
+         <property name="checked">
+          <bool>true</bool>
+         </property>
+        </widget>
+       </widget>
+      </widget>
+      <widget class="QWidget" name="hydrodynamic">
+       <attribute name="title">
+        <string>Hydrodynamic</string>
+       </attribute>
+       <widget class="QWidget" name="formLayoutWidget_2">
+        <property name="geometry">
+         <rect>
+          <x>14</x>
+          <y>10</y>
+          <width>461</width>
+          <height>118</height>
+         </rect>
+        </property>
+        <layout class="QFormLayout" name="hydro_formLayout">
+         <item row="0" column="0">
+          <widget class="QLabel" name="hydro_thredds_label">
+           <property name="text">
+            <string>Model grid:</string>
+           </property>
+          </widget>
+         </item>
+         <item row="1" column="0">
+          <widget class="QLabel" name="hydro_field_label">
+           <property name="text">
+            <string>Layer field:</string>
+           </property>
+          </widget>
+         </item>
+         <item row="1" column="1">
+          <widget class="QComboBox" name="hydro_field_comboBox"/>
+         </item>
+         <item row="0" column="1">
+          <widget class="QComboBox" name="hydro_grid_comboBox"/>
+         </item>
+         <item row="3" column="1">
+          <widget class="QComboBox" name="hydro_variable_comboBox">
+           <property name="enabled">
+            <bool>true</bool>
+           </property>
+          </widget>
+         </item>
+         <item row="3" column="0">
+          <widget class="QLabel" name="hydro_variable_label">
+           <property name="text">
+            <string>Variable:</string>
+           </property>
+          </widget>
+         </item>
+         <item row="2" column="0">
+          <widget class="QCheckBox" name="tideSolution_checkBox">
+           <property name="text">
+            <string>Use tide solution </string>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </widget>
+       <widget class="QCalendarWidget" name="hydro_calendarWidget">
+        <property name="enabled">
+         <bool>true</bool>
+        </property>
+        <property name="geometry">
+         <rect>
+          <x>18</x>
+          <y>170</y>
+          <width>456</width>
+          <height>171</height>
+         </rect>
+        </property>
+       </widget>
+       <widget class="QLabel" name="label_available_hydro">
+        <property name="geometry">
+         <rect>
+          <x>20</x>
+          <y>140</y>
+          <width>111</width>
+          <height>17</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>Available files:</string>
+        </property>
+       </widget>
+      </widget>
+      <widget class="QWidget" name="wave">
+       <attribute name="title">
+        <string>Wave</string>
+       </attribute>
+       <widget class="QWidget" name="formLayoutWidget">
+        <property name="geometry">
+         <rect>
+          <x>13</x>
+          <y>14</y>
+          <width>461</width>
+          <height>89</height>
+         </rect>
+        </property>
+        <layout class="QFormLayout" name="wave_formLayout">
+         <item row="0" column="0">
+          <widget class="QLabel" name="wave_thredds_label">
+           <property name="text">
+            <string>Model grid:</string>
+           </property>
+          </widget>
+         </item>
+         <item row="1" column="0">
+          <widget class="QLabel" name="wave_field_label">
+           <property name="text">
+            <string>Layer field:</string>
+           </property>
+          </widget>
+         </item>
+         <item row="1" column="1">
+          <widget class="QComboBox" name="wave_field_comboBox"/>
+         </item>
+         <item row="2" column="0">
+          <widget class="QLabel" name="wave_variable_label">
+           <property name="text">
+            <string>Variable:</string>
+           </property>
+          </widget>
+         </item>
+         <item row="2" column="1">
+          <widget class="QComboBox" name="wave_variable_comboBox"/>
+         </item>
+         <item row="0" column="1">
+          <widget class="QComboBox" name="wave_grid_comboBox"/>
+         </item>
+        </layout>
+       </widget>
+       <widget class="QCalendarWidget" name="wave_calendarWidget">
+        <property name="enabled">
+         <bool>true</bool>
+        </property>
+        <property name="geometry">
+         <rect>
+          <x>18</x>
+          <y>170</y>
+          <width>456</width>
+          <height>171</height>
+         </rect>
+        </property>
+       </widget>
+       <widget class="QLabel" name="label_available_wave">
+        <property name="geometry">
+         <rect>
+          <x>20</x>
+          <y>140</y>
+          <width>111</width>
+          <height>17</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>Available files:</string>
+        </property>
+       </widget>
+      </widget>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+ </widget>
+ <resources>
+  <include location="resources.qrc"/>
+ </resources>
+ <connections/>
+</ui>
