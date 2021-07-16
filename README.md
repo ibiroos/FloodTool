@@ -128,14 +128,15 @@ synthesize time series of astronomical tide level only
 ([4](#fig:tidal_solution)). These models contains a subset of principal
 tidal armonics, so knowing the list of armonics included in tidal signal
 is posible to adjust the model output timeseris to a sum of tidal
-armonics of the form: <span id="eq:marea">
-$$\\eta(t) = Z\_{0} + \\sum\_{i}^{}A\_{i}\\text{cos}\\left( \\omega\_{i}t + \\phi\_{i} \\right)\\qquad(1)$$
-</span> by means of least squares method, where in equation
-[1](#eq:marea) *A*<sub>*i*</sub>, *ω*<sub>*i*</sub> and
-*ϕ*<sub>*i*</sub> are amplitudes, frequancies and phases of different
-tidal armonics present in the tidal signal. If the selected model grid
-has a tidal solution, the check box will be enabled. Make sure you check
-it if you want to use it.
+armonics of the form:
+
+<img src="./doc/svg/tide.svg" id="fig:marea" />
+
+by means of least squares method, where *A*<sub>*i*</sub>,
+*ω*<sub>*i*</sub> and *ϕ*<sub>*i*</sub> are amplitudes, frequencies and
+phases of different tidal armonics present in the tidal signal. If the
+selected model grid has a tidal solution, the check box will be enabled.
+Make sure you check it if you want to use it.
 
 <figure>
 <img src="./doc/png/tidalsolution.png" id="fig:tidal_solution" alt="Figure 4: Synthetic astronomical tide calculated from ROMS tidal solution." /><figcaption aria-hidden="true">Figure 4: Synthetic astronomical tide calculated from ROMS tidal solution.</figcaption>
