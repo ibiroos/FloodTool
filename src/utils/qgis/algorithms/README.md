@@ -10,4 +10,4 @@ Utility scripts to set input layers for the FloodTool plug-in:
 * *license:* Copyright (c) Xunta de Galicia 2020. Licensed under MIT
 * *funding:* MYCOAST  Interreg Atlantic Programme, Project nr. EAPA 285/2016
              http://www.mycoast-project.org
-  <p align="center"><img src="./doc/png/MyCoast_Logo_small.png"></p>
+  <p align="center"><img src="../../../../doc/png/MyCoast_Logo_small.png"></p>
