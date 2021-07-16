@@ -36,10 +36,10 @@ OSGeo4W. Installation on Linux operating system is straightforward as
 far as all Linux distributions have latest versions of both, software
 and libraries.
 
-To install the program under Windows, visit
-https://www.qgis.org/es/site/forusers/download.html and choose the
-option to download it from OSGeo4W. When executing the “setup” of the
-OSGeo4W we must follow these steps:
+To install the program under Windows, visit this
+[link](https://www.qgis.org/es/site/forusers/download.html) and choose
+the option to download it from OSGeo4W. When executing the “setup” of
+the OSGeo4W we must follow these steps:
 
 <div id="fig:OSGeo4W" class="subfigures">
 
@@ -90,7 +90,7 @@ plugins” looking for “FloodTool” and activate it. If you are able to see
 a connector icon at the toolbar, congratulations, you have the plug-in
 installed.
 
-# Usage
+## Usage
 
 FloodTool plug-in operates over an specific GIS type of vector layer
 with several fields and metadata. Several tools (algorithms and models)
@@ -120,15 +120,29 @@ normal QGIS project.
     calendar is updated accordingly with available files on THREDDS
     server. The attribute of active layer that contains the nearest
     neighbour assignation and netCDF standard_name attribute of variable
-    you want to use must also be filled ([4](#fig:hydro_tab)). So far,
-    model grids are hard coded into the plug-in. Some hydrodynamic
-    models have a tidal solution. This solution can be used to
-    synthesize time series of astronomical tide only. If the selected
-    model grid has a tidal solution, the check box will be enable. Make
-    sure you check it if you want to use it.
+    you want to use must also be filled ([5](#fig:hydro_tab)). So far,
+    model grids are hard coded into the plug-in.
+
+Some hydrodynamic models have a tidal solution that can be used to
+synthesize time series of astronomical tide level only
+([4](#fig:tidal_solution)). These models contains a subset of principal
+tidal armonics, so knowing the list of armonics included in tidal signal
+is posible to adjust the model output timeseris to a sum of tidal
+armonics of the form: <span id="eq:marea">
+$$\\eta(t) = Z\_{0} + \\sum\_{i}^{}A\_{i}\\text{cos}\\left( \\omega\_{i}t + \\phi\_{i} \\right)\\qquad(1)$$
+</span> by means of least squares method, where in equation
+[1](#eq:marea) *A*<sub>*i*</sub>, *ω*<sub>*i*</sub> and
+*ϕ*<sub>*i*</sub> are amplitudes, frequancies and phases of different
+tidal armonics present in the tidal signal. If the selected model grid
+has a tidal solution, the check box will be enabled. Make sure you check
+it if you want to use it.
 
 <figure>
-<img src="./doc/png/hydro_tab.png" id="fig:hydro_tab" alt="Figure 4: Hydrodynamic model selection." /><figcaption aria-hidden="true">Figure 4: Hydrodynamic model selection.</figcaption>
+<img src="./doc/png/tidalsolution.png" id="fig:tidal_solution" alt="Figure 4: Synthetic astronomical tide calculated from ROMS tidal solution." /><figcaption aria-hidden="true">Figure 4: Synthetic astronomical tide calculated from ROMS tidal solution.</figcaption>
+</figure>
+
+<figure>
+<img src="./doc/png/hydro_tab.png" id="fig:hydro_tab" alt="Figure 5: Hydrodynamic model selection." /><figcaption aria-hidden="true">Figure 5: Hydrodynamic model selection.</figcaption>
 </figure>
 
 -   Fill in the Wave tab in the same way you filled Hydrodynamic tab.
@@ -136,23 +150,23 @@ normal QGIS project.
     spans. The plug-in will select the overlapping time span to perform
     actual calculations. Once hydrodynamic and wave models are
     configured, we need to specify the kind of output we want. So far,
-    several options are available ([5](#fig:wave_tab)). Time control
+    several options are available ([6](#fig:wave_tab)). Time control
     options indicate if you want to compute Max level or a Timeseries of
     expected flood level. Additionally, you can compute the real level
     or use a “traffic light”-like color codes. For this last option to
     work you will need an input layer with flood level return periods.
 
 <figure>
-<img src="./doc/png/wave_tab.png" id="fig:wave_tab" alt="Figure 5: Wave model selection tab." /><figcaption aria-hidden="true">Figure 5: Wave model selection tab.</figcaption>
+<img src="./doc/png/wave_tab.png" id="fig:wave_tab" alt="Figure 6: Wave model selection tab." /><figcaption aria-hidden="true">Figure 6: Wave model selection tab.</figcaption>
 </figure>
 
 -   Once configured, Run button will be enabled. Click on it to start
     with data download, perform calculation of flood level and
     categorization of output. Progress bar will evolve accordingly
-    ([6](#fig:resultado)).
+    ([7](#fig:resultado)).
 
 <figure>
-<img src="./doc/png/resultado.png" id="fig:resultado" alt="Figure 6: Running the configuration and output layer." /><figcaption aria-hidden="true">Figure 6: Running the configuration and output layer.</figcaption>
+<img src="./doc/png/resultado.png" id="fig:resultado" alt="Figure 7: Running the configuration and output layer." /><figcaption aria-hidden="true">Figure 7: Running the configuration and output layer.</figcaption>
 </figure>
 
 -   After running, and Output vector layer will be created with several
@@ -161,8 +175,21 @@ normal QGIS project.
     additional Datetime field called *time* that can be used to animate
     the output with an optional plug-in called Time Manager.
     Installation of this plug-in is very straightforward
-    ([7](#fig:timemanager)).
+    ([8](#fig:timemanager)).
 
 <figure>
-<img src="./doc/png/timemanager.png" id="fig:timemanager" alt="Figure 7: TimeManager plug-in output animation." /><figcaption aria-hidden="true">Figure 7: TimeManager plug-in output animation.</figcaption>
+<img src="./doc/png/timemanager.png" id="fig:timemanager" alt="Figure 8: TimeManager plug-in output animation." /><figcaption aria-hidden="true">Figure 8: TimeManager plug-in output animation.</figcaption>
 </figure>
+
+## Credits
+
+-   *author:*
+    -   Pablo E. Carracedo García (DXCASCC, Consellería Medio Ambiente
+        Territorio e Vivenda, Xunta de Galicia,
+        pablo.enrique.carracedo.garcia@xunta.es)
+-   *license:* Copyright (c) Xunta de Galicia 2020. Licensed under MIT
+-   *funding:* MYCOAST Interreg Atlantic Programme, Project nr. EAPA
+    285/2016 http://www.mycoast-project.org
+    <p align="center">
+    <img src="./doc/png/MyCoast_Logo_small.png">
+    </p>
